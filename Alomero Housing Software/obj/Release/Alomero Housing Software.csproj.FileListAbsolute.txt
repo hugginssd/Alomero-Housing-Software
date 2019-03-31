@@ -1,0 +1,20 @@
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\Alomero Housing Software.exe.config
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\Alomero Housing Software.exe
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\Alomero Housing Software.pdb
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\LiveCharts.dll
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\Windows.Forms.HintTextBox.dll
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\LiveCharts.pdb
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\LiveCharts.xml
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\bin\Release\Windows.Forms.HintTextBox.pdb
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.Form1.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.Properties.Resources.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.UI.frmSignIn.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.UI.UserDashboard.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.BLL.UserEmployeeBLL.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.UI.UserNewClient.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero_Housing_Software.UI.UserUpdatePayment.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero Housing Software.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero Housing Software.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero Housing Software.csproj.CopyComplete
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero Housing Software.exe
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Release\Alomero Housing Software.pdb
