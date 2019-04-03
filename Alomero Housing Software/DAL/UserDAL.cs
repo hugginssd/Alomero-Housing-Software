@@ -12,7 +12,7 @@ namespace Alomero_Housing_Software.DAL
 {
     class UserDAL
     {
-        SqlConnection con = new SqlConnection("Data Source=USER-PC\\SQLEXPRESS;Initial Catalog=alomero;Integrated Security=True");
+        SqlConnection con= new SqlConnection("Data Source=USER-PC\\SQLEXPRESS;Initial Catalog=alomero;Integrated Security=True");
         public bool Insert(UserBLL ubll)
         {
             bool IsSuccess = false;
@@ -98,5 +98,50 @@ namespace Alomero_Housing_Software.DAL
             }
             return dt;
         }
+        public bool SignIn(UserBLL ubll)
+        {
+            bool IsSuccess = false;
+            DataTable dt = new DataTable();
+            SqlDataReader dr = null;
+            string sql = "SELECT [Id]" +
+                              ",[Firstname]" +
+                              ",[Lastname]" +
+                              ",[Username]" +
+                              ",[Password]" +
+                          "FROM [dbo].[Users]" +
+                          "WHERE [Username] =@Username AND [Password] =@Password";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            try
+            {
+
+                cmd.Parameters.AddWithValue("@Username", ubll.Username);
+                cmd.Parameters.AddWithValue("@Password", ubll.Password);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    IsSuccess = true;
+                }
+                else
+                {
+                    IsSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Data Access Error");
+            }
+            finally
+            {
+                cmd.Dispose();
+                dr.Close();
+                con.Close();
+            }
+            cmd.Dispose();
+            dr.Close();
+            con.Close();
+            return IsSuccess;
+        }
+
     }
 }

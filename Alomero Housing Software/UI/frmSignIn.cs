@@ -29,7 +29,20 @@ namespace Alomero_Housing_Software.UI
         {
             if (txtUsername.Text != "Username" && txtPassword.Text != "Password")
             {
-                    
+                ubll.Username = txtUsername.Text.Trim();
+                ubll.Password = txtPassword.Text.Trim();
+                bool IsSuccess = udal.SignIn(ubll);
+                if (IsSuccess)
+                {
+                    Form1 form = new Form1();
+                    form.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid credentials","Login",MessageBoxButtons.OKCancel,MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
+
+                }
             }
         }
     }
