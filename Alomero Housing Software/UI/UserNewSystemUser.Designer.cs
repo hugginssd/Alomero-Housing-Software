@@ -76,6 +76,7 @@
             this.txtSearch.Text = "Search here....";
             this.txtSearch.TextForeColor = System.Drawing.Color.Black;
             this.txtSearch.Value = "";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dataGridView1
             // 
@@ -197,6 +198,7 @@
             this.txtConfirmPassword.HintValue = "Confirm Password";
             this.txtConfirmPassword.Location = new System.Drawing.Point(255, 318);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(199, 23);
             this.txtConfirmPassword.TabIndex = 22;
             this.txtConfirmPassword.Text = "Confirm Password";
@@ -212,6 +214,7 @@
             this.txtPassword.HintValue = "Password";
             this.txtPassword.Location = new System.Drawing.Point(255, 268);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(199, 23);
             this.txtPassword.TabIndex = 21;
             this.txtPassword.Text = "Password";

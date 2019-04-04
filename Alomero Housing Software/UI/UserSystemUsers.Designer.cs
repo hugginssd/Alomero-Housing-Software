@@ -93,6 +93,7 @@
             this.txtPassword.HintValue = "Password";
             this.txtPassword.Location = new System.Drawing.Point(31, 241);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(264, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Password";
@@ -108,6 +109,7 @@
             this.txtConfirmPassword.HintValue = "Confirm Password";
             this.txtConfirmPassword.Location = new System.Drawing.Point(32, 314);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(264, 23);
             this.txtConfirmPassword.TabIndex = 4;
             this.txtConfirmPassword.Text = "Confirm Password";
@@ -167,6 +169,7 @@
             this.txtSearch.Text = "Search here...";
             this.txtSearch.TextForeColor = System.Drawing.Color.Black;
             this.txtSearch.Value = "";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // BtnSearch
             // 

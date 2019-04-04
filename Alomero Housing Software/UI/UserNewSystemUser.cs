@@ -175,5 +175,10 @@ namespace Alomero_Housing_Software.UI
             txtID.Enabled = false;
             txtID.Text = Convert.ToString(fns._nextId("[dbo].[Users]"));
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

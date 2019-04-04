@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnExchangeRate = new System.Windows.Forms.Button();
             this.BtnAbout = new System.Windows.Forms.Button();
             this.BtnManageSystemUsers = new System.Windows.Forms.Button();
             this.BtnNewSystemUsers = new System.Windows.Forms.Button();
@@ -45,28 +47,27 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblLoginStatus = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.picProfile = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BtnExchangeRate = new System.Windows.Forms.Button();
-            this.picProfile = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userExchangeRate = new Alomero_Housing_Software.UI.UserExchangeRate();
             this.userNewSystemUser = new Alomero_Housing_Software.UI.UserNewSystemUser();
             this.userSystemUsers = new Alomero_Housing_Software.UI.UserSystemUsers();
             this.userEmployee = new Alomero_Housing_Software.BLL.UserEmployeeBLL();
             this.userUpdatePayment = new Alomero_Housing_Software.UI.UserUpdatePayment();
             this.userNewClient = new Alomero_Housing_Software.UI.UserNewClient();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +94,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(201, 521);
             this.panel1.TabIndex = 0;
+            // 
+            // BtnExchangeRate
+            // 
+            this.BtnExchangeRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnExchangeRate.FlatAppearance.BorderSize = 0;
+            this.BtnExchangeRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnExchangeRate.Font = new System.Drawing.Font("Humanst521 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnExchangeRate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnExchangeRate.Location = new System.Drawing.Point(59, 344);
+            this.BtnExchangeRate.Name = "BtnExchangeRate";
+            this.BtnExchangeRate.Size = new System.Drawing.Size(142, 33);
+            this.BtnExchangeRate.TabIndex = 16;
+            this.BtnExchangeRate.Text = "Excahnge Rate";
+            this.BtnExchangeRate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnExchangeRate.UseVisualStyleBackColor = true;
+            this.BtnExchangeRate.Click += new System.EventHandler(this.BtnExchangeRate_Click);
             // 
             // BtnAbout
             // 
@@ -320,6 +337,27 @@
             this.lblUserName.Size = new System.Drawing.Size(0, 18);
             this.lblUserName.TabIndex = 1;
             // 
+            // picProfile
+            // 
+            this.picProfile.Dock = System.Windows.Forms.DockStyle.Left;
+            this.picProfile.Image = global::Alomero_Housing_Software.Properties.Resources.Female_Profile_50px;
+            this.picProfile.Location = new System.Drawing.Point(0, 0);
+            this.picProfile.Name = "picProfile";
+            this.picProfile.Size = new System.Drawing.Size(55, 52);
+            this.picProfile.TabIndex = 0;
+            this.picProfile.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Alomero_Housing_Software.Properties.Resources.swift_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
@@ -370,66 +408,6 @@
             this.panel3.Size = new System.Drawing.Size(936, 484);
             this.panel3.TabIndex = 2;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(-8, 460);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(952, 23);
-            this.panel5.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Humanst521 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(419, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 14);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Developed by Mambo Chami";
-            // 
-            // BtnExchangeRate
-            // 
-            this.BtnExchangeRate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnExchangeRate.FlatAppearance.BorderSize = 0;
-            this.BtnExchangeRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnExchangeRate.Font = new System.Drawing.Font("Humanst521 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnExchangeRate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnExchangeRate.Location = new System.Drawing.Point(59, 344);
-            this.BtnExchangeRate.Name = "BtnExchangeRate";
-            this.BtnExchangeRate.Size = new System.Drawing.Size(142, 33);
-            this.BtnExchangeRate.TabIndex = 16;
-            this.BtnExchangeRate.Text = "Excahnge Rate";
-            this.BtnExchangeRate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnExchangeRate.UseVisualStyleBackColor = true;
-            this.BtnExchangeRate.Click += new System.EventHandler(this.BtnExchangeRate_Click);
-            // 
-            // picProfile
-            // 
-            this.picProfile.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picProfile.Image = global::Alomero_Housing_Software.Properties.Resources.Female_Profile_50px;
-            this.picProfile.Location = new System.Drawing.Point(0, 0);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(55, 52);
-            this.picProfile.TabIndex = 0;
-            this.picProfile.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Alomero_Housing_Software.Properties.Resources.swift_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // userExchangeRate
             // 
             this.userExchangeRate.Location = new System.Drawing.Point(0, 76);
@@ -472,6 +450,29 @@
             this.userNewClient.Size = new System.Drawing.Size(936, 461);
             this.userNewClient.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Location = new System.Drawing.Point(-8, 460);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(952, 23);
+            this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Humanst521 BT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(419, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 14);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Developed by Mambo Chami";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,21 +481,21 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

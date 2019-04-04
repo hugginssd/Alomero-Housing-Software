@@ -13,6 +13,7 @@ C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserCompanyDetailSettings.resources
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserDashboard.resources
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.BLL.UserEmployeeBLL.resources
+C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserExchangeRate.resources
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserNewClient.resources
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserNewSystemUser.resources
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserSystemUsers.resources
@@ -22,4 +23,3 @@ C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero Housing Software.csproj.CopyComplete
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero Housing Software.exe
 C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero Housing Software.pdb
-C:\Users\user\source\repos\Alomero Housing Software\Alomero Housing Software\obj\Debug\Alomero_Housing_Software.UI.UserExchangeRate.resources

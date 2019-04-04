@@ -119,5 +119,12 @@ namespace Alomero_Housing_Software.UI
             txtConfirmPassword.Clear();
             txtSearch.Clear();
         }
+        DataTable dt = new DataTable();
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+           
+            dt = udal.Select(txtSearch.Text);
+            dataGridView1.DataSource = dt;
+        }
     }
 }
