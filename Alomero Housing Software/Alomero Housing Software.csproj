@@ -8,9 +8,25 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Alomero_Housing_Software</RootNamespace>
     <AssemblyName>Alomero Housing Software</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,9 +72,18 @@
   <ItemGroup>
     <Compile Include="BLL\ClientBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
+    <Compile Include="BLL\ExchangeRateBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="DAL\Connections.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\ExchangeRateDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="UI\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserCompanyDetailSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,11 +118,23 @@
     <Compile Include="UI\UserDashboard.Designer.cs">
       <DependentUpon>UserDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserExchangeRate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserExchangeRate.Designer.cs">
+      <DependentUpon>UserExchangeRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserNewClient.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UserNewClient.Designer.cs">
       <DependentUpon>UserNewClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserNewSystemUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserNewSystemUser.Designer.cs">
+      <DependentUpon>UserNewSystemUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UserSystemUsers.cs">
       <SubType>UserControl</SubType>
@@ -111,6 +148,9 @@
     <Compile Include="UI\UserUpdatePayment.Designer.cs">
       <DependentUpon>UserUpdatePayment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,8 +176,14 @@
     <EmbeddedResource Include="UI\UserEmployee.resx">
       <DependentUpon>UserEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserExchangeRate.resx">
+      <DependentUpon>UserExchangeRate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserNewClient.resx">
       <DependentUpon>UserNewClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserNewSystemUser.resx">
+      <DependentUpon>UserNewSystemUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserSystemUsers.resx">
       <DependentUpon>UserSystemUsers.cs</DependentUpon>
@@ -165,6 +211,17 @@
   <ItemGroup>
     <None Include="Resources\Female Profile_50px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

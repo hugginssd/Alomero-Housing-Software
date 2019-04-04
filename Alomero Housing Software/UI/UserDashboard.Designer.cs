@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UserDashboard";
-            this.Size = new System.Drawing.Size(912, 463);
+            this.Size = new System.Drawing.Size(926, 463);
             this.ResumeLayout(false);
 
         }

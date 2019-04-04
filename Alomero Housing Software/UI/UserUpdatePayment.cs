@@ -22,6 +22,7 @@ namespace Alomero_Housing_Software.UI
         ClientBLL cbll = new ClientBLL();
         Functions fns = new Functions();
         double rate = 0;
+        double AmountInUS = 0;
         private void UserUpdatePayment_Load(object sender, EventArgs e)
         {
             try
@@ -69,6 +70,7 @@ namespace Alomero_Housing_Software.UI
                     txtNOKPhoneNumber.Text = dt.Rows[0][10].ToString();
                     txtResidentialArea.Text = dt.Rows[0][12].ToString();
                     txtAmountPaidInUS.Text = "US$" + dt.Rows[0][13].ToString();
+                    AmountInUS = Convert.ToDouble(dt.Rows[0][13].ToString());
                     txtDateRegistered.Text = dt.Rows[0][14].ToString();
                     txtTotalAmountToBePaid.Text = "US$" + dt.Rows[0][15].ToString();
                 }
@@ -96,19 +98,23 @@ namespace Alomero_Housing_Software.UI
             {
 
             }
-
+                
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
+            //double previous = Convert.ToDouble(AmountInUS);
+            //MessageBox.Show(previous.ToString());
             if (txtDistributionNumber.Text != "Distribution number" && txtStandNumber.Text != "Stand number")
             {
                 if (txtAmountInUS.Text != "Amount In US$" && txtAmount.Text != "Amount To Pay(local currency)")
                 {
                     try
                     {
+                        //MessageBox.Show(Convert.ToString(Convert.ToDouble(txtAmountInUS.Text.Trim()) + AmountInUS));
+                      
                         cbll.StandNumber = txtStandNumber.Text.ToUpper().Trim();
-                        cbll.AmountPaidInUS = txtAmountInUS.Text.Trim();
+                        cbll.AmountPaidInUS = Convert.ToString(Convert.ToDouble(txtAmountInUS.Text.Trim()) + AmountInUS);
                         cbll.DistributionNumber = txtDistributionNumber.Text.ToUpper().Trim();
                         bool IsSuccess = cdal.UpdatePayment(cbll);
                         if (IsSuccess)

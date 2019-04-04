@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Alomero_Housing_Software.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,12 @@ namespace Alomero_Housing_Software
             BtnNewClients.Visible = false;
             BtnUpdateClientPayments.Visible = false;
             BtnNewEmployee.Visible = false;
+            BtnNewSystemUsers.Visible = false;
+            BtnManageSystemUsers.Visible = false;
+            userNewClient.Visible = true;
+            userNewClient.BringToFront();
+            BtnExchangeRate.Visible = false;
+           
         }
 
         private void BtnDashboard_Click(object sender, EventArgs e)
@@ -33,6 +40,7 @@ namespace Alomero_Housing_Software
             BtnUpdateClientPayments.Visible = false;
             BtnSystemSettings.Visible = true;
             BtnSecuritySettings.Visible = true;
+            BtnExchangeRate.Visible = false;
         }
 
         private void BtnEmployee_Click(object sender, EventArgs e)
@@ -48,6 +56,9 @@ namespace Alomero_Housing_Software
                 BtnUpdateClientPayments.Visible = false;
                 BtnSystemSettings.Visible = true;
                 BtnSecuritySettings.Visible = true;
+                BtnNewSystemUsers.Visible = false;
+                BtnManageSystemUsers.Visible = false;
+                BtnExchangeRate.Visible = false;
             }
             else
             {
@@ -57,6 +68,9 @@ namespace Alomero_Housing_Software
                 BtnUpdateClientPayments.Visible = false;
                 BtnSystemSettings.Visible = true;
                 BtnSecuritySettings.Visible = true;
+                BtnNewSystemUsers.Visible = false;
+                BtnManageSystemUsers.Visible = false;
+                BtnExchangeRate.Visible = false;
             }
         }
 
@@ -69,8 +83,11 @@ namespace Alomero_Housing_Software
             {
                 BtnNewClients.Visible = true;
                 BtnUpdateClientPayments.Visible = true;
+                BtnExchangeRate.Visible = true;
                 BtnSystemSettings.Visible = false;
                 BtnSecuritySettings.Visible = false;
+                BtnNewSystemUsers.Visible = false;
+                BtnManageSystemUsers.Visible = false;
             }
             else
             {
@@ -78,6 +95,9 @@ namespace Alomero_Housing_Software
                 BtnUpdateClientPayments.Visible = false;
                 BtnSystemSettings.Visible = true;
                 BtnSecuritySettings.Visible = true;
+                BtnNewSystemUsers.Visible = false;
+                BtnManageSystemUsers.Visible = false;
+                BtnExchangeRate.Visible = false;
             }
         }
 
@@ -85,13 +105,37 @@ namespace Alomero_Housing_Software
         {
             sidePanel.Location = new Point(0, 263);
             sidePanel.BringToFront();
+            i = i + 1;
+            if (i % 2 == 0)
+            {
+                BtnSecuritySettings.Visible = false;
+                BtnNewSystemUsers.Visible = true;
+                BtnManageSystemUsers.Visible = true;
+            }
+            else
+            {
+                BtnSecuritySettings.Visible = true;
+                BtnNewSystemUsers.Visible = false;
+                BtnManageSystemUsers.Visible = false;
+            }
+
         }
 
         private void BtnSecuritySettings_Click(object sender, EventArgs e)
         {
             sidePanel.Location = new Point(0, 320);
             sidePanel.BringToFront();
-        }
+            if (MessageBox.Show("Database backup and sytem configurations are reserved to the system developer for monthly backups and maintenance upgrades.", "System settings", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1)==DialogResult.OK)
+            {
+                sidePanel.Location = new Point(0, 92);
+                sidePanel.BringToFront();
+            }
+            else if (MessageBox.Show("Database backup and sytem configurations are reserved to the system developer for monthly backups and maintenance upgrades.", "System settings", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1) == DialogResult.Cancel)
+            {
+                sidePanel.Location = new Point(0, 92);
+                sidePanel.BringToFront();
+            }
+         }
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
@@ -123,6 +167,44 @@ namespace Alomero_Housing_Software
         {
             userEmployee.Visible = true;
             userEmployee.BringToFront();
+        }
+
+        private void BtnManageSystemUsers_Click(object sender, EventArgs e)
+        {
+            userSystemUsers.Visible = true;
+            userSystemUsers.BringToFront();
+        }
+
+        private void BtnNewSystemUsers_Click(object sender, EventArgs e)
+        {
+            userNewSystemUser.Visible = true;
+            userNewSystemUser.BringToFront();
+        }
+
+        private void lblLoginStatus_Click(object sender, EventArgs e)
+        {
+            frmSignIn signIn = new frmSignIn();
+            signIn.Show();
+            this.Hide();
+        }
+
+        private void BtnAbout_Click(object sender, EventArgs e)
+        {
+            sidePanel.Location = new Point(0, 377);
+            sidePanel.BringToFront();
+            FrmAboutBox frmAboutBox = new FrmAboutBox();
+            frmAboutBox.Show();
+        }
+
+        private void BtnExchangeRate_Click(object sender, EventArgs e)
+        {
+            userExchangeRate.Visible = true;
+            userExchangeRate.BringToFront();
+            userNewClient.Visible = false;
+            userNewSystemUser.Visible = false;
+            userSystemUsers.Visible = false;
+            userUpdatePayment.Visible = false;
+            userEmployee.Visible = false;
         }
     }
 }

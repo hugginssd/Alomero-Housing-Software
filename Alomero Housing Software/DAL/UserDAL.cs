@@ -77,7 +77,7 @@ namespace Alomero_Housing_Software.DAL
                           ",[Username]" +
                           ",[Password]" +
                       "FROM[dbo].[Users]" +
-                      "WHERE[Firstname] LIKE '%" + keywords + "%' OR [Lastname] LIKE '%" + keywords + "%' OR [Role] LIKE '%" + keywords + "%' OR [Username] LIKE '%" + keywords + "%'";
+                      " WHERE[Firstname] LIKE '%" + keywords + "%' OR [Lastname] LIKE '%" + keywords + "%' OR [Role] LIKE '%" + keywords + "%' OR [Username] LIKE '%" + keywords + "%'";
             SqlCommand cmd = new SqlCommand(sql, con);
             try
             {
@@ -109,7 +109,7 @@ namespace Alomero_Housing_Software.DAL
                               ",[Username]" +
                               ",[Password]" +
                           "FROM [dbo].[Users]" +
-                          "WHERE [Username] =@Username AND [Password] =@Password";
+                          " WHERE [Username] =@Username AND [Password] =@Password";
             SqlCommand cmd = new SqlCommand(sql, con);
             try
             {
@@ -142,6 +142,80 @@ namespace Alomero_Housing_Software.DAL
             con.Close();
             return IsSuccess;
         }
+        public bool Update(UserBLL ubll)
+        {
+            bool IsSuccess = false;
+            string sql = "UPDATE [dbo].[Users]"+
+                                   "SET[Username] = @Username"+
+                                      ",[Password] = @Password"+
+                                    " WHERE[ID]=@ID";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            try
+            {
+               
+                cmd.Parameters.AddWithValue("@Username", ubll.Username);
+                cmd.Parameters.AddWithValue("@Password", ubll.Password);
+                cmd.Parameters.AddWithValue("@ID", ubll.ID);
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    IsSuccess = true;
+                }
+                else
+                {
+                    IsSuccess = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Data Access Error");
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+            return IsSuccess;
+        }
+        public string SelectRole(UserBLL ubll)
+        {
+            DataTable dt = new DataTable();
+            string username = "";
+            SqlDataAdapter da = null;
+            string sql = "SELECT [Firstname]" +
+                              ",[Lastname]" +
+                              ",[Username]" +
+                              ",[Password]" +
+                          "FROM [dbo].[Users]" +
+                          " WHERE [Username] =@Username AND [Password] =@Password";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            try
+            {
 
+                cmd.Parameters.AddWithValue("@Username", ubll.Username);
+                cmd.Parameters.AddWithValue("@Password", ubll.Password);
+                con.Open();
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    username = Convert.ToString(dt.Rows[0][0].ToString()+" "+ dt.Rows[0][1].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Data Access Error");
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
+            cmd.Dispose();
+            con.Close();
+            return username;
+        }
     }
 }

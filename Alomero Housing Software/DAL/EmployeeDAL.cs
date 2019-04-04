@@ -70,7 +70,7 @@ namespace Alomero_Housing_Software.DAL
                                       ",[NationalID] = @NationalID" +
                                       ",[Designation] = @Designation" +
                                       ",[DateEmployeed] = @DateEmployeed" +
-                                 "WHERE[EmployeeID] = @EmployeeID";
+                                 " WHERE[EmployeeID] = @EmployeeID";
             SqlCommand cmd = new SqlCommand(sql, con);
             try
             {
@@ -114,7 +114,7 @@ namespace Alomero_Housing_Software.DAL
                               ",[Designation]" +
                               ",[DateEmployeed]" +
                           "FROM[dbo].[Employees]" +
-                           "WHERE[EmployeeID] LIKE '%" + keywords + "%'";
+                           " WHERE[EmployeeID] LIKE '%" + keywords + "%'";
 
             SqlCommand cmd = new SqlCommand(sql, con);
             try

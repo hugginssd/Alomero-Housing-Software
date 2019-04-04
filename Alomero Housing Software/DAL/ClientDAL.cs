@@ -92,12 +92,13 @@ namespace Alomero_Housing_Software.DAL
         }
         public bool UpdatePayment(ClientBLL cbll)
         {
+            //update subcription
             bool IsSuccess = true;
-            SqlConnection con = new SqlConnection("Data Source=USER-PC\\SQLEXPRESS;Initial Catalog=alomero;Integrated Security=True");
+            SqlConnection con = new SqlConnection();
             string sql = "UPDATE [dbo].[Clients]" +
                                "SET[StandNumber] = @StandNumber" +
                                   ",[AmountPaidInInUS] = @AmountPaidInInUS" +
-                             "WHERE [DistributionNumber] = @DistributionNumber";
+                             " WHERE [DistributionNumber] = @DistributionNumber";
             SqlCommand cmd = new SqlCommand(sql, con);
             try
             {
@@ -180,7 +181,7 @@ namespace Alomero_Housing_Software.DAL
                               ",[DateOfRegistration]" +
                               ",[TotalAmountToBePaid]" +
                           "FROM [dbo].[Clients]" +
-                           "WHERE [DistributionNumber] LIKE'%" + DistributionNumber + "%'";
+                           " WHERE [DistributionNumber] LIKE'%" + DistributionNumber + "%'";
             SqlCommand cmd = new SqlCommand(sql, con);
             try
             {
